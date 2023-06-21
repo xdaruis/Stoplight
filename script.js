@@ -1,6 +1,6 @@
-document.getElementById("btn").onclick = function changeColor() {
+function changeColor() {
     clearInterval(timerInterval);
-    timerInterval = setInterval(changeColorTimer, 9000);
+    timerInterval = setInterval(changeColor, 9000);
     if (document.getElementById("btn").className === "btn btn-danger") {
         document.getElementById("btn").className = "btn btn-warning";
     } else if (document.getElementById("btn").className === "btn btn-warning") {
@@ -10,14 +10,4 @@ document.getElementById("btn").onclick = function changeColor() {
     }
 }
 
-function changeColorTimer() {
-    if (document.getElementById("btn").className === "btn btn-danger") {
-        document.getElementById("btn").className = "btn btn-warning";
-    } else if (document.getElementById("btn").className === "btn btn-warning") {
-        document.getElementById("btn").className = "btn btn-success";
-    } else {
-        document.getElementById("btn").className = "btn btn-danger";
-    }
-}
-
-var timerInterval = setInterval(changeColorTimer, 9000);
+let timerInterval = setInterval(changeColor, 9000);
